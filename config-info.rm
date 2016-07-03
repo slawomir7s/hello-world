@@ -42,5 +42,29 @@ git checkout master
 git merge --no-ff readme-edits
 git push origin master
 
+-------------------
+ #wlaczenie agenta
+ eval "$(ssh-agent -s)"
+ 
+ #spradzenie, czy sa klucze
+ ls -al ~/.ssh
+
+ #wygenerowanie kluczy
+ ssh-keygen -t rsa -b 4096 -C "slawomir_s@tlen.pl"
+ 
+ #dodanie domyślnego klucza do git'a
+ ssh-add ~/.ssh/id_rsa
+ 
+ #skopiowanie zawartości klucza do clipboard'u
+ clip < ~/.ssh/id_rsa.pub
+
+ #sprawdzenie polaczenia z github
+ ssh -T git@github.com
+ 
+ #sprawdzenie polaczenia po ssl
+ ssh -T -p 443 git@ssh.github.com
+
+
+
 
 
