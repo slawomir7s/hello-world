@@ -1,0 +1,49 @@
+
+-----------------
+
+    Create a new repository on GitHub. You'll import your external Git repository to this new repository.
+
+    On the command line, make a "bare" clone of the repository using the external clone URL. 
+    This creates a full copy of the data, but without a working directory for editing files, 
+    and ensures a clean, fresh export of all the old data.
+
+    git clone --bare https://githost.org/extuser/repo.git
+    # Makes a bare clone of the external repository in a local directory
+    
+    (perhaps with a user@ in front of the domain name).
+
+    Push the locally cloned repository to GitHub using the "mirror" option, which ensures that all references, 
+    such as branches and tags, are copied to the imported repository.
+
+    cd *repo.git*
+    git push --mirror https://github.com/ghuser/repo.git
+    # Pushes the mirror to the new GitHub repository
+
+    Remove the temporary local repository.
+
+    cd ..
+    rm -rf repo.git
+
+-----------------
+git@github.com:slawomir7s/hello-world.git
+
+git clone --bare git://slawomir7s@github.com/slawomir7s/hello-world.git
+cd *hello-world.git*
+git push --mirror git://slawomir7s@github.com/slawomir7s/hello-world.git
+cd ..
+rm -rf hello-world.git
+
+Step 1: From your project repository, bring in the changes and test.
+
+git fetch origin
+git checkout -b readme-edits origin/readme-edits
+git merge master
+
+Step 2: Merge the changes and update on GitHub.
+
+git checkout master
+git merge --no-ff readme-edits
+git push origin master
+
+
+
