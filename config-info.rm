@@ -27,11 +27,8 @@
 -----------------
 git@github.com:slawomir7s/hello-world.git
 
-git clone --bare git://slawomir7s@github.com/slawomir7s/hello-world.git
+git clone git://slawomir7s@github.com/slawomir7s/hello-world.git
 cd *hello-world.git*
-git push --mirror git://slawomir7s@github.com/slawomir7s/hello-world.git
-cd ..
-rm -rf hello-world.git
 
 Step 1: From your project repository, bring in the changes and test.
 
